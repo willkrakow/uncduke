@@ -1,4 +1,5 @@
 import React from 'react'
+import './index.css';
 
 const Index = () => {
   
@@ -16,12 +17,19 @@ const Index = () => {
 
   return (
     <div>
-      <h3>Who do you think is gonna win tonight?</h3>
-      <div className="buttonwrapper">
-        <button onClick={() => handleSubmit({team: "UNC"})}>Carolina</button>
-        <button onClick={() => handleSubmit({team: "Duke"})}>Duke</button>
+      <div className="wrapper">
+        <h3 className="title">Who's gonna win tonight?</h3>
+        <div className="buttonwrapper">
+          <button className="team unc" id="unc">
+            Carolina
+          </button>
+          <button className="team duke" id="duke">
+            Duke
+          </button>
+        </div>
       </div>
     </div>
+
   )
 }
 

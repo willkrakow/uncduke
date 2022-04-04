@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.yourdomain.tld`,
+    title: `Which blue will win?`,
+    description: "Who's gonna win the 2022 NCAA Men's Basketball Championship?"
   },
   plugins: [
     `gatsby-plugin-image`,

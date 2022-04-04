@@ -35,6 +35,7 @@ const Index = ({ data }) => {
       console.error(error);
     } finally {
       setLoading(false);
+      setValue(true);
     }
   };
 

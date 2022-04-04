@@ -172,4 +172,6 @@ section.results {
 
 .result-count {
     width: 100px;
+    padding: 10px;
+    margin-top: 10px;
 }

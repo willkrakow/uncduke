@@ -4,10 +4,14 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-
-        return await base.table('votes').create(req.body)
+        const data = await base.table('votes').create(req.body)
+        res.status(200).json(data)
+        return;
     }
     if (req.method === "GET"){
-        return await base('votes').select().all();
+        const data = await base('votes').select().all();
+        res.status(200).json(data)
+        return;
     }
+    res.status(404).json({error: "Not found"})
 }

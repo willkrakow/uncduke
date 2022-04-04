@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel&family=Libre+Baskerville&display=swap');
 
+body {
+    font-family: 'Bebas Neue';
+    text-align: center;
+}
 * {
   margin: 0;
   padding: 0;
@@ -21,9 +25,9 @@ h3.title {
 }
 
 .team {
-  flex: 100%;
   height: 200px;
   font-size: 48px;
+  flex: 1;
   margin: 20px;
   border-radius: 20px;
   box-shadow: 0 4px 16px 2px rgba(0,0,0,0.15);
@@ -33,17 +37,21 @@ h3.title {
 }
 
 .team:hover{
-  box-shadow: 0 16px 24px 4px rgba(0,0,0,0.15);
+  box-shadow: 0 16px 24px 4px rgba(0,0,0,0.25);
 }
 
 .buttonwrapper {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
+
 .unc {
   background-color: #4b9cd3;
   color: #fff;
-  font-family: 'Avenir';
-  font-weight: bold;
+  font-family: 'Libre Baskerville';
 }
 
 .duke {
@@ -51,4 +59,117 @@ h3.title {
   color: #fff;
   font-family: "EB Garamond";
   font-weight: 500;
+}
+
+.kansas {
+    background-color: #0051BA;
+    color: #fff;
+    font-family: 'Cinzel';
+    letter-spacing: 0.5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.background-image {
+    grid-area: 1 / 1;
+}
+
+.grid .team {
+    grid-area: 1 / 1;
+}
+
+.teamimage::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    z-index: 1;
+}
+
+.teamimage {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20vw;
+    transition: all 0.2s ease;
+}
+
+.teamimageimage {
+    max-width: 900px;
+    max-height: 900px;
+    object-fit: cover;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.teamimage.hidden {
+    display: none;
+}
+
+.teamimageimage.hidden {
+    display: none;
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+section.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.resultwrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 20px;
+    max-width: 300px;
+    margin: auto;
+}
+
+.unc-results {
+    background-color: #4b9cd3;
+}
+
+.kansas-results {
+    background-color: #0051BA;
+}
+
+.result-count {
+    width: 100px;
 }
